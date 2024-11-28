@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  # Use ${releaseName} to ensure unique names per AppDeployment
+  name: ${releaseName}-nginx
+  # Set the namespace dynamically using ${releaseNamespace}
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      # Name of the chart to deploy
+      chart: nginx
+      sourceRef:
+        kind: HelmRepository
+        name: nginx-helm-repo
+        # Use the workspaceNamespace variable for referencing the helm repository
+        namespace: ${workspaceNamespace}
+      version: 13.1.4
+  interval: 1m
+  # Define the values used for HelmRelease
+  values:
+    service:
+      type: ClusterIP
+      port: 80
+

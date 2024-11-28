@@ -1,0 +1,8 @@
+displayName: NGINX Web Server
+description: A simple, lightweight web server.
+category:
+  - web
+overview: |
+  # Overview
+  NGINX is a lightweight web server that can handle a large number of concurrent connections.
+

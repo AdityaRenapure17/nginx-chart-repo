@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: nginx-helm-repo
+  namespace: ${WORKSPACE_NAMESPACE}
+spec:
+  interval: 1m
+  url: https://charts.bitnami.com/bitnami
+
+

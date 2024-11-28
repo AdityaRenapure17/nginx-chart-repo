@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-defaults
+  namespace: ${WORKSPACE_NAMESPACE}
+data:
+  values.yaml: |
+    service:
+      type: ClusterIP
+      port: 80
+
